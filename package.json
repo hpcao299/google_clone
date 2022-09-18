@@ -1,0 +1,27 @@
+{
+    "name": "google_clone",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/server.js",
+    "scripts": {
+        "dev": "nodemon ./src/server.js",
+        "tailwind": "postcss -w ./src/public/css/tailwind.css -o ./src/public/css/styles.css",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "^10.4.11",
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6",
+        "method-override": "^3.0.0",
+        "postcss": "^8.4.16",
+        "postcss-cli": "^10.0.0",
+        "tailwindcss": "^3.1.8"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+}

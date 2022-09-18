@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply font-arial;
+}
+
+.fixed-header {
+    @apply fixed top-0 left-0 right-0 z-50 py-2 shadow-fixed-header;
+}
+
+.fixed-header .logo {
+    width: 86px;
+}
+
+.link-item:hover h3 {
+    text-decoration: underline;
+}
+
+.in-2-line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+}
