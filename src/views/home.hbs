@@ -53,5 +53,5 @@
 <script type="text/javascript">
     const searchForm = document.querySelector('.js-search-form'); const searchInput =
     document.querySelector('.js-search-input'); searchForm.addEventListener('submit', (e) => {
-    e.preventDefault(); window.location = `/search?q=${searchInput.value}` });
+    e.preventDefault(); window.location = `/search?q=${searchInput.value.split(' ').join('+')}` });
 </script>

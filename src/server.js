@@ -1,8 +1,10 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars');
 const cors = require('cors');
 const methodOverride = require('method-override');
+const Controllers = require('./Controllers');
 
 const app = express();
 const port = process.env.port || 8000;
@@ -21,9 +23,7 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/search', (req, res) => {
-    res.render('search');
-});
+app.get('/search', Controllers.searchResults);
 
 app.listen(port, () => {
     console.log('App is listening on port: ', port);
