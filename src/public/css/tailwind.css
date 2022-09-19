@@ -18,10 +18,23 @@
     text-decoration: underline;
 }
 
+.in-1-line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+}
+
 .in-2-line {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-clamp: 2;
     -webkit-line-clamp: 2;
+}
+
+.image-link-item:hover .image {
+    background-color: rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
 }

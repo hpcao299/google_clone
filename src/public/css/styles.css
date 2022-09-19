@@ -530,20 +530,38 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.mr-5 {
+  margin-right: 1.25rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
 .mb-\[30px\] {
   margin-bottom: 30px;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
+.block {
+  display: block;
 }
 .flex {
   display: flex;
+}
+.hidden {
+  display: none;
 }
 .h-\[80vh\] {
   height: 80vh;
@@ -566,17 +584,17 @@ video {
 .h-4 {
   height: 1rem;
 }
+.h-\[180px\] {
+  height: 180px;
+}
+.h-\[200px\] {
+  height: 200px;
+}
 .h-\[43px\] {
   height: 43px;
 }
-.h-\[3px\] {
-  height: 3px;
-}
 .max-h-24 {
   max-height: 6rem;
-}
-.min-h-\[200vh\] {
-  min-height: 200vh;
 }
 .w-screen {
   width: 100vw;
@@ -611,6 +629,11 @@ video {
 .max-w-\[652px\] {
   max-width: 652px;
 }
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -620,6 +643,9 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-center {
   align-items: center;
 }
@@ -628,6 +654,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .rounded-3xl {
   border-radius: 1.5rem;
@@ -659,10 +688,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(26 115 232 / var(--tw-border-opacity));
 }
-.bg-\[\#1a73e8\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 115 232 / var(--tw-bg-opacity));
-}
 .fill-\[\#9aa0a6\] {
   fill: #9aa0a6;
 }
@@ -672,6 +697,14 @@ video {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .pr-2 {
   padding-right: 0.5rem;
@@ -691,6 +724,9 @@ video {
 .pt-8 {
   padding-top: 2rem;
 }
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
 .pl-8 {
   padding-left: 2rem;
 }
@@ -703,17 +739,14 @@ video {
 .pt-4 {
   padding-top: 1rem;
 }
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
 .pl-\[10px\] {
   padding-left: 10px;
 }
-.pt-1 {
-  padding-top: 0.25rem;
-}
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
 }
 .text-base {
   font-size: 1rem;
@@ -721,6 +754,12 @@ video {
 }
 .text-\[14px\] {
   font-size: 14px;
+}
+.text-\[12px\] {
+  font-size: 12px;
+}
+.text-\[11px\] {
+  font-size: 11px;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -731,6 +770,12 @@ video {
 }
 .font-normal {
   font-weight: 400;
+}
+.leading-\[20px\] {
+  line-height: 20px;
+}
+.leading-\[16px\] {
+  line-height: 16px;
 }
 .leading-\[43px\] {
   line-height: 43px;
@@ -743,6 +788,18 @@ video {
   --tw-text-opacity: 1;
   color: rgb(95 99 104 / var(--tw-text-opacity));
 }
+.text-\[\#1a73e8\] {
+  --tw-text-opacity: 1;
+  color: rgb(26 115 232 / var(--tw-text-opacity));
+}
+.text-\[\#3c4043\] {
+  --tw-text-opacity: 1;
+  color: rgb(60 64 67 / var(--tw-text-opacity));
+}
+.text-\[\#202124\] {
+  --tw-text-opacity: 1;
+  color: rgb(32 33 36 / var(--tw-text-opacity));
+}
 .text-\[\#1a0dab\] {
   --tw-text-opacity: 1;
   color: rgb(26 13 171 / var(--tw-text-opacity));
@@ -750,10 +807,6 @@ video {
 .text-\[\#4d5156\] {
   --tw-text-opacity: 1;
   color: rgb(77 81 86 / var(--tw-text-opacity));
-}
-.text-\[\#1a73e8\] {
-  --tw-text-opacity: 1;
-  color: rgb(26 115 232 / var(--tw-text-opacity));
 }
 .shadow-normal-search {
   --tw-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
@@ -798,12 +851,25 @@ video {
     text-decoration: underline;
 }
 
+.in-1-line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+}
+
 .in-2-line {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-clamp: 2;
     -webkit-line-clamp: 2;
+}
+
+.image-link-item:hover .image {
+    background-color: rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
 }
 
 .focus-within\:border-\[\#dfe1e500\]:focus-within {
@@ -823,6 +889,10 @@ video {
 .hover\:text-\[\#1a73e8\]:hover {
   --tw-text-opacity: 1;
   color: rgb(26 115 232 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-search:hover {

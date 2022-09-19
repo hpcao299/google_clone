@@ -8,16 +8,21 @@
             <div
                 class="flex-1 max-w-2xl bg-white border border-solid h-11 rounded-3xl border-gray-light shadow-normal-search hover:shadow-search hover:border-[#dfe1e500] focus-within:border-[#dfe1e500] focus-within:shadow-search"
             >
-                <div class="w-full h-full flex pr-2 pl-3.5 items-center">
-                    <form class="flex-1 h-[34px] m-0 pl-1 js-search-form">
+                <form
+                    method="GET"
+                    action="/search"
+                    class="w-full h-full flex pr-2 pl-3.5 items-center"
+                >
+                    <div class="flex-1 h-[34px] m-0 pl-1 js-search-form">
                         <input
                             name="q"
                             type="text"
                             value="{{query}}"
                             class="w-full h-full text-base bg-transparent border-none outline-none js-search-input"
                         />
-                    </form>
-                    <button class="h-full pl-2 pr-3 cursor-pointer">
+                        <input name="type" value="news" class="hidden" hidden />
+                    </div>
+                    <button type="button" class="h-full pl-2 pr-3 cursor-pointer">
                         <svg
                             class="w-6 h-6"
                             focusable="false"
@@ -39,7 +44,7 @@
                             ></path>
                         </svg>
                     </button>
-                    <button class="pr-3 cursor-pointer">
+                    <button type="submit" class="pr-3 cursor-pointer">
                         <svg
                             class="w-6 h-6 fill-[#4285f4]"
                             focusable="false"
@@ -51,28 +56,27 @@
                             ></path>
                         </svg>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     </header>
 
     <div class="text-[#70757a] mt-4 border-b border-solid border-[#ebebeb] text-[14px]">
         <div class="flex ml-44">
-            <a href="#" class="text-[#1a73e8] pt-4 pr-3 pl-[10px]">
-                <div class="flex items-center border-b-[3px] border-solid border-[#1a73e8] pb-2">
+            <a
+                href="/search?q={{query}}&type=all"
+                class="text-[#5f6368] hover:text-[#1a73e8] pt-4 pr-3 pl-[10px]"
+            >
+                <div class="flex items-center pb-2">
                     <span class="mr-2">
-                        <svg class="w-4 h-4 DCxYpf" focusable="false" viewBox="0 0 24 24"><path
-                                fill="#34a853"
-                                d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"
-                            ></path><path
-                                fill="#ea4335"
-                                d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6"
-                            ></path><path
-                                fill="#fbbc04"
-                                d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6"
-                            ></path><path
-                                fill="#4285f4"
-                                d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"
+                        <svg
+                            class="w-4 h-4 DCxYpf"
+                            focusable="false"
+                            style="fill: currentColor;"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><path
+                                d="M16.32 14.88a8.04 8.04 0 1 0-1.44 1.44l5.76 5.76 1.44-1.44-5.76-5.76zm-6.36 1.08c-3.36 0-6-2.64-6-6s2.64-6 6-6 6 2.64 6 6-2.64 6-6 6z"
                             ></path></svg>
                     </span>
                     <span>All</span>
@@ -117,19 +121,24 @@
                     <span>Videos</span>
                 </div>
             </a>
-            <a
-                href="/search?q={{query}}&type=news"
-                class="text-[#5f6368] hover:text-[#1a73e8] pt-4 pr-3 pl-[10px]"
-            >
-                <div class="flex items-center pb-2">
+            <a href="#" class="text-[#1a73e8] pt-4 pr-3 pl-[10px]">
+                <div class="flex items-center border-b-[3px] border-solid border-[#1a73e8] pb-2">
                     <span class="mr-2">
-                        <svg
-                            class="w-4 h-4 DCxYpf"
-                            style="fill: currentColor;"
-                            focusable="false"
-                            viewBox="0 0 24 24"
-                        ><path
-                                d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2"
+                        <svg class="w-4 h-4 DCxYpf" focusable="false" viewBox="0 0 24 24"><path
+                                fill="#34a853"
+                                d="M22 12h-2v6.22c-.07.48-.51.82-1 .78h-7v2h7c1.59.05 2.92-1.17 3-2.76V12"
+                            ></path><path
+                                fill="#4285f4"
+                                d="M19 3h-7v2h7c.49-.04.92.3 1 .78V12h2V5.76A2.93 2.93 0 0 0 19 3"
+                            ></path><path
+                                fill="#ea4335"
+                                d="M12 3H5a2.93 2.93 0 0 0-3 2.76V12h2V5.78A.94.94 0 0 1 5 5h7V3"
+                            ></path><path
+                                fill="#fbbc04"
+                                d="M4 12H2v6.24A2.916 2.916 0 0 0 5 21h7v-2H5c-.49.04-.92-.3-1-.78L4.01 12"
+                            ></path><path
+                                fill="#4285f4"
+                                d="M10 7H6v6h4V7m8 4h-6v2h6v-2m0 4H6v2h12v-2m0-8h-6v2h6V7"
                             ></path></svg>
                     </span>
                     <span>News</span>
@@ -141,18 +150,25 @@
     <div class="ml-44 max-w-[652px]">
         <p class="text-[#70757a] h-[43px] text-sm leading-[43px] mb-3">About
             {{totalResults}}
-            results</p>
-        {{#each results}}
-            <div class="w-[600px] mb-[30px]">
-                <a href="{{this.link}}" class="link-item">
-                    <p class="text-[14px] in-1-line">{{this.link}}
-                        <span class="text-[#5f6368]">{{this.cite.span}}</span>
-                    </p>
-                    <h3 class="pt-1 mb-1 text-[20px] font-normal text-[#1a0dab]">{{this.title}}</h3>
-                </a>
-                <p class="text-[#4d5156] in-2-line text-[14px]">{{{this.description}}}</p>
-            </div>
-        {{/each}}
+            results
+        </p>
+
+        <div>
+            {{#each results}}
+                <div class="mb-[30px]">
+                    <a href="{{this.link}}" class="link-item">
+                        <span
+                            class="text-[#202124] text-[12px] font-normal mb-2"
+                        >{{this.source.title}}</span>
+                        <h3
+                            class="pt-1 mb-1 text-[20px] font-normal text-[#1a0dab]"
+                        >{{this.title}}</h3>
+                        <p class="text-[#4d5156] in-2-line text-[14px] mb-2">{{{this.summary}}}</p>
+                        <span class="text-[#70757a] text-[14px]">1 hour ago</span>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
     </div>
 </div>
 
